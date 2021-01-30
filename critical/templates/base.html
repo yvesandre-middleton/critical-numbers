@@ -1,0 +1,20 @@
+<!doctype html>
+{% block head %}
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+{% endblock %}
+  <title>{% block title %}{% endblock %}Critical Numbers</title>
+<body>
+{% block nav %}
+<nav>
+    <h1 class="navTitle">Critical Numbers</h1>
+</nav>
+{% endblock %}
+<section class="content">
+    <header>
+        {% block header %}{% endblock %}
+    </header>
+    {% block content %}{% endblock %}
+</section>
+</body>

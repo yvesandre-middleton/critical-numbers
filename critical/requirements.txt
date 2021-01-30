@@ -1,0 +1,6 @@
+click~=6.7
+Flask~=1.1.2
+DateTime~=4.3
+MyApplication~=0.1.0
+addict~=2.2.1
+

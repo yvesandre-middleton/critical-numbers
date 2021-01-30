@@ -1,0 +1,7 @@
+addict~=2.4.0
+Flask~=1.1.2
+requests~=2.25.0
+click~=6.7
+Werkzeug~=1.0.1
+lib~=3.0.0
+setuptools~=51.1.1
