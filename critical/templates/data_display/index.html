@@ -3,44 +3,22 @@
 {{ super() }}
 {% endblock %}
 <h1>{% block title %}{% endblock %}</h1>
+
 {% block nav %}
-{% if slate %}
-<nav>
-    <h1 class="nav-title">Fractal Waves</h1>
-    {% for part in instructions %}
-    <h12 class="instructions">{{part}}{% if not instructions|length>= 2 %}| page/{{page}}{% endif %}<br></h12>
-    {% endfor %}
-    <ul id="navRight">
-        {% if g.user %}
-        <li><span>{{ g.user['username'] }}</span>
-        <li><a href="{{ url_for('auth.logout') }}">Log Out</a>
-            {% else %}
-        <li><a href="{{ url_for('auth.register') }}">Register</a>
-        <li><a href="{{ url_for('auth.login') }}">Log In</a>
-            {% endif %}
-    </ul>
-</nav>
-{% else %}
 {{ super() }}
-{% endif %}
+
 {% endblock %}
+
 {% block header %}
-{% if g.user %}
-{% include 'includes/input_form.html'%}
-{% endif %}
+
 {% endblock %}
 
 {% block content %}
-{% if slate %}
-<div class="slate-container">
-<p hidden id="paragraph1">{{slate[0]}}</p>
-<p hidden id="paragraph2">{{slate[1]}}</p>
-<p id="slate"></p>
-</div>
-
-
-{% endif %}
-{% if name_prompt %}
-<p>{{name_prompt}}</p>
-{% endif %}
+{% for item in c02%}
+<p>{{item['c02_mean_1959']}}</p>
+<p>{{item['c02_mean_current']}}</p>
+<p>{{item['c02_mean_1980_global']}}</p>
+<p>{{item['c02_mean_current_global']}}</p>
+<p>{{item['c02_recent_global_avg_annual_increase']}}</p>
+{% endfor %}
 {% endblock %}
